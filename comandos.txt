@@ -1,0 +1,16 @@
+#selesiona qual servidor subir
+python manage.py runserver --settings=medicSearchAdmin.settings.development
+
+#migrar as tabelas do django para db
+python manage.py migrate --settings=medicSearchAdmin.settings.testing
+
+#setar qual modulo vai subir por padrao
+ set DJANGO_SETTINGS_MODULE=medicSearchAdmin.settings.production
+
+ #chamar o venv
+ venv\Scripts\activate
+
+ #instalar pacotes 
+ pip install pacotes
+
+ #
