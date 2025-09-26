@@ -13,4 +13,5 @@ python manage.py migrate --settings=medicSearchAdmin.settings.testing
  #instalar pacotes 
  pip install pacotes
 
- #
+ #sempre que realizar mudanças no model rodar o comando
+  python manage.py makemigrations medicSearch
