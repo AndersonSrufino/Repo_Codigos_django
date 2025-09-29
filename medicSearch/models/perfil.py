@@ -7,6 +7,7 @@ class Perfil(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     token = models.CharField(max_length=255, null=True)
+    image = models.ImageField(null=True, blank=True)
     favoritos = models.ManyToManyField(User, related_name='favoritos', verbose_name='Favoritos')
     especialidade = models.ManyToManyField('Especialidade', related_name='Especialidade', verbose_name='Especialidade')
     endereco = models.ManyToManyField('Endereco', related_name='Endereço', verbose_name='Endereço')
