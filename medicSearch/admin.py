@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import *
 
+class ProfileAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created_at'
+
+admin.site.register(ProfileAdmin)
+
 admin.site.register(Perfil)    
 admin.site.register(Endereco)
 admin.site.register(Dia_da_semana)
