@@ -3,8 +3,14 @@ from .models import *
 
 class ProfileAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
-    list_display = ('usuario', 'papel', 'nascimento')
-    list_filter = ('usuario__is_active',)
+    list_display = ('usuario', 'listaEspecialidades', 'enderecoLista')
+
+    def listaEspecialidades(self, obj):
+        return [i.nome for i in obj.especialidade.all()]
+    def enderecoLista(self, obj):
+        return [i.nome for i in obj.endereco.all()]
+
+    """list_filter = ('usuario__is_active',)
     #readonly_fields = ('usuario',)
     search_fields = ('usuario__username',)
     fieldsets = (
@@ -17,7 +23,7 @@ class ProfileAdmin(admin.ModelAdmin):
         ('Extras',{
             'fields':('especialidade','endereco',)
         }),
-    )
+    )"""
 
 admin.site.register(Perfil, ProfileAdmin)
 
